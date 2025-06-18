@@ -48,8 +48,6 @@ public class LecturerHub extends JFrame
         welcomePanel.add(welcomeLabel, BorderLayout.WEST); //top panel
         
         JButton createExamButton = new JButton("Create New Exam");
-        //createExamButton.addActionListener(e -> showCreateExamDialog());
-        //topPanel.add(createExamButton, BorderLayout.EAST); //top panel
         createExamButton.addActionListener(new ActionListener() 
         {
             public void actionPerformed(ActionEvent e)
@@ -133,6 +131,7 @@ public class LecturerHub extends JFrame
         firstPanel.add(questionsScroll, BorderLayout.CENTER); //:::::
 
         List<Question> questions = new ArrayList<>();
+        
         JButton addQuestionButton = new JButton("Add Question");
         addQuestionButton.addActionListener(new ActionListener()
         {
