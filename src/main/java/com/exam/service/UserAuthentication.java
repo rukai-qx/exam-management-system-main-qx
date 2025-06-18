@@ -9,10 +9,10 @@ import java.util.List;
 //manages all users(students and lecs)
 public class UserAuthentication 
 {
-    private List<User> users;        // list of User objects(stds&lecs) //ref variable is users
+    private List<User> users;        // list of User objects(stds&lecs) //instance variable is users
     private static UserAuthentication uniqueInstance; //static means this variable belongs to the class itself, not to any particular object
 
-    private UserAuthentication() //This ensures no one can create new UserService() from outside the class.only 1 uniqueInstance var for the entire application. 
+    private UserAuthentication() //This ensures no one can create new UserAuthentication() from outside the class.only 1 uniqueInstance var for the entire application. 
     {
         users = new ArrayList<>();
         // Add a default lecturer
@@ -23,13 +23,13 @@ public class UserAuthentication
         users.add(new Student("std2@exam.com", "pwd321", "Bob")); 
     }
 
-    public static UserAuthentication getUniqueInstance() //UserService is the return type//it returns an obj(stduent/lecturer)
+    public static UserAuthentication getUniqueInstance() //UserAuthentication is the return type//it returns an obj(stduent/lecturer)
     {
-        if (uniqueInstance == null) //instance is a static reference to the one and only UserService object
+        if (uniqueInstance == null) //instance is a static reference to the one and only UserAuthentication object
         {
-           uniqueInstance = new UserAuthentication(); //we're now creating UserService obj
+           uniqueInstance = new UserAuthentication(); //we're now creating UserAuthentication obj
         }
-        return uniqueInstance; //returns the obj of UserService which contains stud&lecs.
+        return uniqueInstance; //returns the obj of UserAuthentication which contains stud&lecs.
     }
     
     /*If all three are correct — it returns that user.

@@ -16,17 +16,17 @@ public class LoginFrame extends JFrame // If your class does NOT extend JFrame, 
     private JTextField emailField; // a text box on screen for email input
     private JPasswordField passwordField;// a password box on screen for hidden input
     private JComboBox<String> userTypeCombo;// a dropdown menu for selecting "Student" or "Lecturer"
-    private UserAuthentication userService; // obj reference made of UserService class//service object that manages users
+    private UserAuthentication userService; // obj reference made of UserAuthentication class//service object that manages users
                                      // (not UI)
 
     public LoginFrame() // constructor  
     {
         userService = UserAuthentication.getUniqueInstance(); // Calling the getInstance() method that is defined inside the
-                                                 // UserService class
+                                                 // UserAuthentication class
         initializeUI(); // all attributes being initialized(buttons,labels,fields)//calling
     } /*
        * This means LoginFrame now has access to the users and login methods managed
-       * by UserService.
+       * by UserAuthentication.
        */
 
     private void initializeUI() 
@@ -142,5 +142,5 @@ public class LoginFrame extends JFrame // If your class does NOT extend JFrame, 
  * 
  * On clicking login, checks the input and tries to log them in
  * 
- * If successful, shows their dashboard (next screen)
+ * If successful, shows their HUb (next screen)
  */
