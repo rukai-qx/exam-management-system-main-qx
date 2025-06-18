@@ -2,62 +2,73 @@ package com.exam.model;
 
 import java.util.Date;
 
-public class ExamResult {
+public class ExamResult 
+{
     private Student student;
     private Exam exam;
-    private int score;
-    private int correctAnswers;
-    private int wrongAnswers;
+    private int marks;
+    private int correctAnswerTot;
+    private int wrongAnswerTot;
     private Date submissionTime;
-    private boolean completed;
+    private boolean isEvaluated;
 
-    public ExamResult(Student student, Exam exam) {
+    public ExamResult(Student student, Exam exam) 
+    {
         this.student = student;
         this.exam = exam;
-        this.score = 0;
-        this.correctAnswers = 0;
-        this.wrongAnswers = 0;
+        this.marks = 0;
+        this.correctAnswerTot = 0;
+        this.wrongAnswerTot = 0;
         this.submissionTime = new Date();
-        this.completed = false;
+        this.isEvaluated = false;
     }
 
-    public void calculateScore(int correctAnswers) {
-        this.correctAnswers = correctAnswers;
-        this.wrongAnswers = exam.getQuestions().size() - correctAnswers;
-        this.score = (correctAnswers * 100) / exam.getQuestions().size();
-        this.completed = true;
+    public void calculateMarks(int correctAnswerTot) 
+    {
+        this.correctAnswerTot = correctAnswerTot;
+        this.wrongAnswerTot = exam.getQuestions().size() - correctAnswerTot;
+        this.marks = (correctAnswerTot * 100) / exam.getQuestions().size();
+        this.isEvaluated = true;
     }
 
-    public Student getStudent() {
+    public Student getStudent() 
+    {
         return student;
     }
 
-    public Exam getExam() {
+    public Exam getExam() 
+    {
         return exam;
     }
 
-    public int getScore() {
-        return score;
+    public int getMarks() 
+    {
+        return marks;
     }
 
-    public int getCorrectAnswers() {
-        return correctAnswers;
+    public int getCorrectAnswerTot() 
+    {
+        return correctAnswerTot;
     }
 
-    public int getWrongAnswers() {
-        return wrongAnswers;
+    public int getWrongAnswerTot() 
+    {
+        return wrongAnswerTot;
     }
 
-    public Date getSubmissionTime() {
+    public Date getSubmissionTime() 
+    {
         return submissionTime;
     }
 
-    public boolean isCompleted() {
-        return completed;
+    public boolean isEvaluated() 
+    {
+        return isEvaluated; //returns true/false
     }
 
     @Override
-    public String toString() {
-        return String.format("%s | Score: %d | Correct: %d | Wrong: %d", exam.getTitle(), score, correctAnswers, wrongAnswers);
+    public String toString() 
+    {
+        return String.format("%s | Score: %d | Correct: %d | Wrong: %d", exam.getTitle(), marks, correctAnswerTot, wrongAnswerTot);
     }
 } 
