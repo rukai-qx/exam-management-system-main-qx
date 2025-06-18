@@ -20,14 +20,16 @@ A Java Swing application for managing exams, allowing lecturers to create exams 
 ## Default Users
 
 ### Lecturer
-- Email: lecturer@example.com
-- Password: password123
+- Email: lec1@exam.com
+- Password: pwd111
+- Email: lec2@exam.com
+- Password: pwd222
 
 ### Students
-- Email: student1@example.com
-- Password: password123
-- Email: student2@example.com
-- Password: password123
+- Email: std1@exam.com
+- Password: pwd123
+- Email: std2@exam.com
+- Password: pwd321
 
 ## How to Run
 
@@ -44,16 +46,16 @@ A Java Swing application for managing exams, allowing lecturers to create exams 
 ## Usage
 
 ### Lecturer
-1. Log in using the lecturer credentials
+1. Log in using the lecturer email & password
 2. Click "Create New Exam" to create an exam
-3. Add questions and their options
+3. Add questions and their answers
 4. Select the correct answer for each question
 5. Save the exam
 
 ### Student
-1. Log in using student credentials
+1. Log in using student email & password
 2. View available exams in the left panel
-3. Select an exam and click "Take Selected Exam"
+3. Select an exam and click "Do the Selected Exam"
 4. Answer the questions within the 30-minute time limit
 5. Click "Submit Exam" when done or wait for automatic submission
 6. View results in the right panel
@@ -71,10 +73,9 @@ src/main/java/com/exam/
 │   ├── Question.java
 │   └── ExamResult.java
 ├── service/
-│   └── UserService.java
+│   └── UserAuthentication.java
 └── ui/
     ├── LoginFrame.java
-    ├── LecturerDashboard.java
-    └── StudentDashboard.java
+    ├── LecturerHub.java
+    └── StudentHub.java
 ``` 
-authors
