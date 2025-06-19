@@ -131,7 +131,7 @@ public class LecturerHub extends JFrame
         firstPanel.add(questionsScroll, BorderLayout.CENTER); //:::::
 
         List<Question> questions = new ArrayList<>();
-        
+
         JButton addQuestionButton = new JButton("Add Question");
         addQuestionButton.addActionListener(new ActionListener()
         {
@@ -172,7 +172,7 @@ public class LecturerHub extends JFrame
                     if (question.getGivenQuestion().isEmpty()) 
                     {
                         JOptionPane.showMessageDialog(dialogTop, "All questions must have text");
-                        return;// STOPS here - GOOD!, Code below never runs
+                        return;//stops here the, Code below never runs
                     }
                     if (question.getOptions().isEmpty()) 
                     {
@@ -190,7 +190,7 @@ public class LecturerHub extends JFrame
                         return;
                     }
                 }
-
+                //aggregation
                 Exam exam = new Exam(title, assignedLecturer); //class exam
                 for (Question question : questions) //questions saved in arrayList
                 {
